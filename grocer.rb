@@ -44,7 +44,7 @@ def apply_clearance(cart)
         stats[:price] -= stats[:price]*0.2 if stats[:clearance]
     end 
     cart
-    end 
+    # end 
 
 end 
 
