@@ -44,15 +44,13 @@ def apply_clearance(cart)
         stats[:price] -= stats[:price]*0.2 if stats[:clearance]
     end 
     cart
-    # end 
-
 end 
 
-# def checkout(array, coupons)
-#     hash_cart = consolidate_cart(array)
-#     applied_coupons = apply_coupons(hash_cart, coupons)
-#     appleid_discount  = apply_clearance(applied_coupons)
-#     total = appleid_discount.reduce(0){|acc, {key, value}| acc += value[:price]*value[:count]}
-#     # tenary operator
-#     total>100? total*0.9 : total 
-# end 
+def checkout(array, coupons)
+    hash_cart = consolidate_cart(array)
+    applied_coupons = apply_coupons(hash_cart, coupons)
+    appleid_discount  = apply_clearance(applied_coupons)
+    total = appleid_discount.reduce(0){|acc, {key, value}| acc += value[:price]*value[:count]}
+    # tenary operator
+    total>100? total*0.9 : total 
+end 
