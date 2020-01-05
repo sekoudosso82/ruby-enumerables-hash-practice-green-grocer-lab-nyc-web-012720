@@ -1,9 +1,24 @@
 def consolidate_cart(cart)
-  # code here
-end
+    final_hash = {}
+    cart.each do |element_hash|
+        element_name = element_hash.keys[0]
+        element_stats = element_hash.values[0] 
+
+        # if final_hash[element_name] or
+        if final_hash.has_key?(element_name)
+            final_hash[element_name][:count] += 1
+        else 
+            element_stats[:count] = 1
+            final_hash[element_name] = element_stats
+            # final_hash[:count] = 1
+        end
+    end 
+    final_hash
+end 
 
 def apply_coupons(cart, coupons)
-  # code here
+  
+  
 end
 
 def apply_clearance(cart)
