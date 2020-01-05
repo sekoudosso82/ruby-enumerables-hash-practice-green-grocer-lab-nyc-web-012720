@@ -52,5 +52,5 @@ def checkout(array, coupons)
     appleid_discount  = apply_clearance(applied_coupons)
     total = appleid_discount.reduce(0){| acc, (key, value)| acc += value[:price]*value[:count] }
     # # tenary operator
-    # total>100? total*0.9 : total 
+    total>100? total*0.9 : total 
 end 
