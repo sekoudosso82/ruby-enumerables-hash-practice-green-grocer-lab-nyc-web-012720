@@ -53,14 +53,7 @@ def apply_coupons (cart, coupons)
 end 
   
 
-# def apply_clearance(cart)
-# cart.each do |element|
-#   if element.keys[0][:clearance]
-#     element.keys[0][:price] = element.keys[0][:price] - element.keys[0][:price]*0.2
-#   end
-#   end
-# cart
-# end
+
 
 def apply_clearance(cart)
     cart.each do |product_name, stats|
