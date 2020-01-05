@@ -35,10 +35,7 @@ def apply_coupons (cart, coupons)
     end 
     cart
 end 
-  
-
-
-
+ 
 def apply_clearance(cart)
     cart.each do |product_name, stats|
         stats[:price] -= stats[:price]*0.2 if stats[:clearance]
@@ -51,6 +48,6 @@ def checkout(array, coupons)
     applied_coupons = apply_coupons(hash_cart, coupons)
     appleid_discount  = apply_clearance(applied_coupons)
     total = appleid_discount.reduce(0){| acc, (key, value)| acc += value[:price]*value[:count] }
-    # # tenary operator
+    # tenary operator
     total>100? total*0.9 : total 
 end 
